@@ -8,8 +8,7 @@ include 'libs/load.php';
       load_template('__meta')
     ?>
     <title>Photogram</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+ 
 
     
 
