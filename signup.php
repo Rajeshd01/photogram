@@ -10,7 +10,7 @@ include 'libs/load.php';
     <?php
       load_template('__meta')
     ?>
-    <title>Login_Photogram</title>
+    <title>Signup_Photogram</title>
     <link href="/photogram/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -22,22 +22,22 @@ include 'libs/load.php';
             user-select: none;
         } 
 
-.form-signin {
+.form-signup {
   max-width: 330px;
   padding: 1rem;
 }
 
-.form-signin .form-floating:focus-within {
+.form-signup .form-floating:focus-within {
   z-index: 2;
 }
 
-.form-signin input[type="email"] {
+.form-signup input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.form-signin input[type="password"] {
+.form-signup input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -64,7 +64,7 @@ include 'libs/load.php';
 
 
   <?php
-    load_template('__login')
+    load_template('__signup')
  ?>
 
 </main>
