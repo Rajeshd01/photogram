@@ -1,3 +1,17 @@
+<?php
+$signup = false;
+if(isset($_POST['username']) and ($_POST['phone']) and ($_POST['email']) and ($_POST['password'] and !empty($_POST['password']))){
+  $user = $_POST['username'];
+  $phone = $_POST['phone'];
+  $email = $_POST['email'];
+  $pass = $_POST['password'];
+  // $error = signup($user, $phone, $email, $pass);
+  $result = $signup($user, $phone, $email, $pass);
+  $signup = true;
+}
+?>
+
+
 
 <main class="form-signup">
   <form method="POST" action="test.php"> 
@@ -32,4 +46,4 @@
     <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-body-secondary">&copy; Rajesh</p>
   </form>
-</main>
+</main> 
