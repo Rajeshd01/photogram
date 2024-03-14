@@ -5,32 +5,32 @@ include 'libs/load.php';
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
-   <?php load_template('_loginmeta');?>
+   <?php load_template('__meta');?>
 
-  <!-- <?php load_template('_indexstyle');?> -->
-  <!-- <?php load_template('_signupstyle');?> -->
+
+  <!-- <?php load_template('_signup');?> -->
 
   
   <body>
-<?php load_template('_button');?>
+<?php load_template('__button');?>
 
     
 <header data-bs-theme="dark">
-<?php load_template('_header');?>
+<?php load_template('__header');?>
 </header>
 
 <main>
 
   <section class="py-5 text-center container">
-   <!-- <?php load_template('_albumexample');?> -->
+   <!-- <?php load_template('__photogram');?> -->
   </section>
 
-<!-- <?php load_template('_card');?> -->
-<?php load_template('_signup');?>
+
+<?php load_template('__signup');?>
 
 </main>
 
-<?php load_template('_footer');?>
+<?php load_template('__footer');?>
 <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>

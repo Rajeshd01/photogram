@@ -1,20 +1,31 @@
 <?php
+
+
 $signup = false;
 if(isset($_POST['username']) and ($_POST['phone']) and ($_POST['email']) and ($_POST['password'] and !empty($_POST['password']))){
   $user = $_POST['username'];
   $phone = $_POST['phone'];
   $email = $_POST['email'];
   $pass = $_POST['password'];
-  // $error = signup($user, $phone, $email, $pass);
-  $result = $signup($user, $phone, $email, $pass);
+  $result = signup($user, $phone, $email, $pass);
   $signup = true;
 }
 ?>
 
+<?
+if ($signup){
+
+?>
+    <main class="container">
+      <div class="bg-light p-5 rounded mt-3">
+        <h1>Login Sucess</h1>
+
+      </div>
+    </main>
 
 
 <main class="form-signup">
-  <form method="POST" action="test.php"> 
+  <form method="POST" action="signup.php"> 
     <img class="mb-4" src="https://img.freepik.com/free-photo/computer-security-with-login-password-padlock_107791-16191.jpg?size=626&ext=jpg&ga=GA1.1.1141139838.1703836882&semt=sph" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -47,3 +58,5 @@ if(isset($_POST['username']) and ($_POST['phone']) and ($_POST['email']) and ($_
     <p class="mt-5 mb-3 text-body-secondary">&copy; Rajesh</p>
   </form>
 </main> 
+
+
