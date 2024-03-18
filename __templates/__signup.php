@@ -1,62 +1,68 @@
 <?php
 
-
 $signup = false;
-if(isset($_POST['username']) and ($_POST['phone']) and ($_POST['email']) and ($_POST['password'] and !empty($_POST['password']))){
-  $user = $_POST['username'];
-  $phone = $_POST['phone'];
-  $email = $_POST['email'];
-  $pass = $_POST['password'];
-  $result = signup($user, $phone, $email, $pass);
-  $signup = true;
+print_r($_POST);
+if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['email_address']) and isset($_POST['phone'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $email = $_POST['email_address'];
+    $phone = $_POST['phone'];
+    $error = signup($username, $password, $email, $phone);
+    $signup = true;
 }
 ?>
 
-<?
-if ($signup){
+<?php
+    if ($signup) {
+        if (!$error) {
+            ?>
+          <main class="container">
+          <div class="bg-light p-5 rounded mt-3">
+          <h1>Signup Success</h1>
+          <p class="lead">Now you can login from <a href="/../photogram/login.php">here</a>.</p>
 
-?>
-    <main class="container">
-      <div class="bg-light p-5 rounded mt-3">
-        <h1>Login Sucess</h1>
-
-      </div>
-    </main>
-
-
-<main class="form-signup">
-  <form method="POST" action="signup.php"> 
-    <img class="mb-4" src="https://img.freepik.com/free-photo/computer-security-with-login-password-padlock_107791-16191.jpg?size=626&ext=jpg&ga=GA1.1.1141139838.1703836882&semt=sph" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-    <div class="form-floating">
-      <input name="username" type="text" class="form-control" id="floatingInputUsername" placeholder="name@example.com">
-      <label for="floatingInput">Username</label>
     </div>
-    
-    <div class="form-floating">
-      <input name="phone" type="text" class="form-control" id="floatingInputPhone" placeholder="name@example.com">
-      <label for="floatingInput">Phone Number</label>
-    </div>
-
-    <div class="form-floating">
-      <input name="email_address" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
-
-    <div class="form-check text-start my-3">
-      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Remember me
-      </label>
-    </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-body-secondary">&copy; Rajesh</p>
-  </form>
-</main> 
-
+</main>
+<?php
+        } else {
+            ?>
+             <main class="container">
+             <div class="bg-light p-5 rounded mt-3">
+             <h1>Signup Fail</h1>
+             <p class="lead">Something went wrong, <?=$error?>
+             </p>
+                </div>
+            </main>
+<?php
+            }
+    } 
+    else {
+        ?>
+       <main class="form-signup">
+    <form method="post" action="signup.php">
+        <h1 class="h3 mb-3 fw-normal">Signup here</h1>
+        <div class="form-floating">
+            <input name="username" type="text" class="form-control" id="floatingInputUsername"
+                placeholder="name@example.com">
+            <label for="floatingInputUsername">Username</label>
+        </div>
+        <div class="form-floating">
+            <input name="phone" type="text" class="form-control" id="floatingInputUsername"
+                placeholder="name@example.com">
+            <label for="floatingInputUsername">Phone</label>
+        </div>
+        <div class="form-floating">
+            <input name="email_address" type="email" class="form-control" id="floatingInput"
+                placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary hvr-grow-rotate" type="submit">Sign up</button>
+    </form>
+</main>
+<?php
+    }
 
