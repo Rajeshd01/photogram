@@ -6,9 +6,10 @@ if (isset($_POST['username']) and isset($_POST['password']) and !empty($_POST['p
     $password = $_POST['password'];
     $email = $_POST['email_address'];
     $phone = $_POST['phone'];
-    $error = signup($username, $password, $email, $phone);
+    $error = User::signup($username, $password, $email, $phone);
     $signup = true;
 }
+
 ?>
 
 <?php
