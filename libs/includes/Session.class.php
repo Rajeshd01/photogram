@@ -1,9 +1,5 @@
 <?php
 
-/**
- * PHP session wrapper
-*/
-
 class Session
 {
     public static function start()
@@ -15,13 +11,11 @@ class Session
     {
         session_unset();
     }
-
     public static function destroy()
     {
         session_destroy();
     }
 
-    // Set a new variable in session
     public static function set($key, $value)
     {
         $_SESSION[$key] = $value;
